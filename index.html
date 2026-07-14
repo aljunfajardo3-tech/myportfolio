@@ -1,0 +1,1401 @@
+<!doctype html>
+<html lang="en"><head><script>window["__codeletBootstrap__"]=JSON.parse('{"A":"A","B":"20260714-05-1435aa9"}');</script><script src="/_sdk/f432b76fb310b513.telemetry_sdk.js" integrity="sha512-9FJQ55EKmmqhyyik8BhrMVfm0+iYYfb8uOlRsjtkxJMEI97qOVEI4PnHohDjQAtvAep0IOEpdQ64eki0sz62ug=="></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1366">
+<title>Aljun — Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&amp;family=DM+Sans:wght@300;400;500;600&amp;family=DM+Mono:wght@300;400&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --green: #1a472a;
+  --green-mid: #1e5232;
+  --green-light: #255e35;
+  --orange: #d4642a;
+  --orange-hover: #bf5520;
+  --orange-light: #f5e6d3;
+  --cream: #fdf8f2;
+  --pink: #e8567a;
+  --pink-dark: #c8334a;
+  --white: #fff;
+  --text: #1a1a1a;
+  --muted: #888;
+}
+
+html { scroll-behavior: smooth; font-size: 14px; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: #0d0d0d;
+  width: 1366px;
+  margin: 0 auto;
+  overflow-x: hidden;
+}
+
+/* ── NAV ── */
+.topnav {
+  position: fixed;
+  top: 0; left: 50%; transform: translateX(-50%);
+  width: 1366px;
+  z-index: 200;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 28px;
+  padding: 14px 48px;
+  background: var(--green);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.4);
+}
+
+.topnav a {
+  font-size: 12px;
+  color: #a8c8a0;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  transition: color 0.2s;
+  padding: 4px 0;
+  position: relative;
+}
+
+.topnav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 1px;
+  background: var(--orange);
+  transform: scaleX(0);
+  transition: transform 0.2s;
+}
+
+.topnav a:hover { color: #fff; }
+.topnav a:hover::after { transform: scaleX(1); }
+
+.topnav a.active {
+  background: var(--orange);
+  color: #fff;
+  padding: 5px 16px;
+  border-radius: 2px;
+  font-weight: 600;
+}
+
+.topnav a.active::after { display: none; }
+
+/* ── ORIGAMI ── */
+.ori {
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+}
+.ori-br { bottom: 0; right: 36px; width: 110px; opacity: 0.88; }
+.ori-tl { top: 10px; left: 20px; width: 58px; opacity: 0.32; transform: rotate(180deg); }
+
+section {
+  width: 1366px;
+  position: relative;
+  overflow: hidden;
+}
+
+.sec-nav {
+  background: var(--green);
+  display: flex;
+  justify-content: flex-end;
+  gap: 28px;
+  padding: 13px 48px;
+}
+
+.sec-nav a {
+  font-size: 12px; color: #a8c8a0; text-decoration: none;
+  letter-spacing: 0.04em; transition: color 0.2s;
+}
+
+.sec-nav a:hover { color: #fff; }
+
+.sec-nav a.active {
+  background: var(--orange); color: #fff;
+  padding: 4px 14px; border-radius: 2px; font-weight: 600;
+}
+
+/* HERO */
+#hero {
+  background: var(--green);
+  height: 768px;
+  display: flex;
+  flex-direction: column;
+  padding-top: 44px;
+}
+
+.hero-inner {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 0 80px;
+  gap: 60px;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-photo {
+  flex-shrink: 0;
+  width: 240px;
+  height: 300px;
+  border: 5px solid var(--orange);
+  background: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+.photo-placeholder {
+  width: 100%; height: 100%;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 8px;
+  background: linear-gradient(145deg, #ede0d0 0%, #d8cabb 100%);
+}
+
+.photo-placeholder i { font-size: 56px; color: #b8a090; }
+.photo-placeholder span { font-size: 10px; color: #b8a090; text-transform: uppercase; letter-spacing: 0.12em; }
+
+.hero-content { flex: 1; }
+
+.hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: #a8c8a0;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+.hero-tag::before {
+  content: '';
+  display: block;
+  width: 24px; height: 1px;
+  background: var(--orange);
+}
+
+.hero-h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 72px;
+  color: #fff;
+  line-height: 1.05;
+  margin-bottom: 28px;
+}
+
+.hero-h1 em { font-style: italic; color: #f5d4b8; }
+
+.hero-contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 36px;
+}
+
+.hero-contacts a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12.5px;
+  color: #a8c8a0;
+  text-decoration: none;
+  transition: color 0.2s, transform 0.2s;
+}
+
+.hero-contacts a:hover { color: #fff; transform: translateX(4px); }
+.hero-contacts a i { font-size: 15px; color: var(--orange); }
+
+.hero-ctas {
+  display: flex;
+  gap: 12px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 26px;
+  font-size: 12px;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: none;
+  transition: all 0.22s;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: var(--orange);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: var(--orange-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(212,100,42,0.4);
+}
+
+.btn-outline {
+  background: transparent;
+  color: #fff;
+  border: 1.5px solid rgba(255,255,255,0.3);
+}
+
+.btn-outline:hover {
+  border-color: #fff;
+  background: rgba(255,255,255,0.06);
+  transform: translateY(-2px);
+}
+
+.hero-footer {
+  background: var(--green-mid);
+  padding: 15px 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 2;
+}
+
+.avail {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  color: #7ab88a;
+}
+
+.dot {
+  width: 8px; height: 8px;
+  background: #6fcf6f;
+  border-radius: 50%;
+  animation: blink 2s infinite;
+}
+
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:.3} }
+
+.hero-scroll {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  color: #3a6a4a;
+  letter-spacing: 0.1em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.hero-scroll:hover { color: #7ab88a; }
+
+/* ABOUT */
+#about {
+  background: var(--orange-light);
+  min-height: 768px;
+}
+
+.about-inner {
+  display: flex;
+  align-items: stretch;
+  position: relative;
+  z-index: 2;
+}
+
+.about-left {
+  background: var(--orange);
+  width: 260px;
+  flex-shrink: 0;
+  padding: 36px 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.about-left h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  color: #fff;
+  margin-bottom: 6px;
+  line-height: 1.2;
+}
+
+.lbl {
+  font-size: 10px;
+  color: #f5c9a8;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 600;
+  margin-top: 22px;
+  margin-bottom: 10px;
+}
+
+.tool-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.tool-ico {
+  width: 34px; height: 34px;
+  background: rgba(255,255,255,0.18);
+  display: flex; align-items: center; justify-content: center;
+  color: #fff;
+  font-size: 17px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.tool-ico:hover { background: rgba(255,255,255,0.35); transform: scale(1.1); }
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: 6px;
+}
+
+.tag {
+  font-size: 9.5px;
+  padding: 3px 10px;
+  background: rgba(255,255,255,0.14);
+  color: #fff;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.tag:hover { background: rgba(255,255,255,0.28); }
+
+.lang-pills {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.lang-pill {
+  font-size: 11px;
+  color: #fff;
+  padding: 3px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+  cursor: default;
+}
+
+.soft-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.soft-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  color: #f5c9a8;
+}
+
+.soft-item i { font-size: 12px; color: rgba(255,255,255,0.8); }
+
+.about-right {
+  flex: 1;
+  background: var(--orange-light);
+  padding: 52px 60px;
+  position: relative;
+}
+
+.about-right h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 44px;
+  color: var(--text);
+  margin-bottom: 18px;
+}
+
+.about-right p {
+  font-size: 13.5px;
+  color: #666;
+  line-height: 1.9;
+  max-width: 560px;
+  margin-bottom: 32px;
+}
+
+.about-stats {
+  display: flex;
+  gap: 36px;
+  margin-top: 8px;
+}
+
+.astat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.astat .n {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  color: var(--orange);
+  line-height: 1;
+}
+
+.astat .l {
+  font-size: 10px;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* SERVICES */
+#services {
+  background: var(--green);
+  min-height: 768px;
+}
+
+.services-header {
+  padding: 52px 80px 36px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  position: relative;
+  z-index: 2;
+}
+
+.services-header h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 50px;
+  color: #fff;
+}
+
+.services-header p {
+  font-size: 12px;
+  color: #7ab88a;
+  letter-spacing: 0.06em;
+  padding-bottom: 8px;
+}
+
+.svcs-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+  margin: 0 36px;
+  position: relative;
+  z-index: 2;
+}
+
+.svc {
+  background: var(--green-mid);
+  padding: 30px 24px 24px;
+  border-left: 3px solid transparent;
+  transition: all 0.25s;
+  cursor: pointer;
+  position: relative;
+  min-height: 260px;
+  display: flex;
+  flex-direction: column;
+}
+
+.svc:hover {
+  background: var(--green-light);
+  border-left-color: var(--orange);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 28px rgba(0,0,0,0.3);
+}
+
+.svc:hover .sico { background: var(--orange); color: #fff; }
+.svc:hover .snum { color: rgba(255,255,255,0.15); }
+
+.sico {
+  width: 42px; height: 42px;
+  background: rgba(255,255,255,0.08);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--orange);
+  font-size: 20px;
+  margin-bottom: 16px;
+  transition: all 0.25s;
+}
+
+.sname { font-size: 15px; font-weight: 600; color: #fff; margin-bottom: 10px; }
+
+.sdesc { font-size: 11.5px; color: #7ab88a; line-height: 1.75; margin-bottom: 14px; flex: 1; }
+
+.spills { display: flex; flex-wrap: wrap; gap: 5px; }
+
+.spill {
+  font-size: 9px;
+  padding: 3px 9px;
+  background: rgba(212,100,42,0.16);
+  color: #f5c9a8;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.snum {
+  position: absolute;
+  bottom: 16px; right: 18px;
+  font-size: 9px;
+  color: rgba(255,255,255,0.07);
+  font-family: 'DM Mono', monospace;
+  transition: color 0.25s;
+}
+
+.svc-addon {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin: 2px 36px 0;
+  background: rgba(255,255,255,0.04);
+  padding: 20px 24px;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+  border-left: 3px solid transparent;
+  transition: all 0.2s;
+}
+
+.svc-addon:hover { background: rgba(255,255,255,0.07); border-left-color: var(--orange); }
+
+.addon-ico {
+  width: 42px; height: 42px;
+  background: var(--orange);
+  display: flex; align-items: center; justify-content: center;
+  color: #fff; font-size: 20px; flex-shrink: 0;
+}
+
+.addon-body { flex: 1; }
+.addon-title { font-size: 14px; font-weight: 600; color: #fff; margin-bottom: 4px; }
+.addon-desc { font-size: 11px; color: #7ab88a; }
+
+.addon-badge {
+  font-size: 9px;
+  background: var(--orange);
+  color: #fff;
+  padding: 5px 14px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.svc-bottom {
+  display: flex;
+  align-items: stretch;
+  margin: 2px 36px 0;
+  position: relative;
+  z-index: 2;
+}
+
+.sb-left {
+  flex: 1;
+  background: var(--green-mid);
+  padding: 15px 22px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sb-left span { font-size: 11px; color: #7ab88a; }
+
+.sb-right {
+  background: var(--orange);
+  padding: 15px 28px;
+  display: flex; align-items: center; gap: 9px;
+  cursor: pointer; border: none;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.1em; color: #fff;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.sb-right:hover { background: var(--orange-hover); }
+.sb-right:active { transform: scale(0.97); }
+
+/* PROJECTS */
+#projects {
+  background: var(--orange-light);
+  min-height: 768px;
+}
+
+.proj-inner {
+  display: flex;
+  align-items: stretch;
+  position: relative;
+  z-index: 2;
+}
+
+.proj-side {
+  background: var(--orange);
+  width: 260px;
+  flex-shrink: 0;
+  padding: 36px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.proj-side h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+
+.proj-side p { font-size: 11px; color: #f5c9a8; line-height: 1.7; }
+
+.pstats {
+  border-top: 1px solid rgba(255,255,255,0.15);
+  padding-top: 20px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.pstat .n {
+  font-family: 'Playfair Display', serif;
+  font-size: 30px; color: #fff;
+}
+
+.pstat .l {
+  font-size: 9px; color: #f5c9a8;
+  text-transform: uppercase; letter-spacing: 0.12em; margin-top: 2px;
+}
+
+.proj-main {
+  flex: 1;
+  padding: 36px 48px;
+  background: var(--orange-light);
+}
+
+.proj-main h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 40px;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.proj-sub { font-size: 12px; color: #999; margin-bottom: 22px; }
+
+.filter-row {
+  display: flex;
+  gap: 2px;
+  margin-bottom: 16px;
+}
+
+.filt {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  padding: 8px 18px;
+  background: #fff;
+  color: #999;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  transition: all 0.2s;
+}
+
+.filt:hover, .filt.on { background: var(--orange); color: #fff; }
+
+.plist { display: flex; flex-direction: column; gap: 2px; }
+
+.prow {
+  display: flex;
+  align-items: stretch;
+  background: #fff;
+  border-left: 3px solid transparent;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.prow:hover { background: #fdf5ee; border-left-color: var(--orange); }
+.prow:hover .pn { background: var(--orange); color: #fff; }
+.prow:hover .pa { opacity: 1; }
+
+.pn {
+  font-size: 11px; font-weight: 600; color: var(--orange);
+  padding: 15px 14px;
+  min-width: 46px;
+  display: flex; align-items: center; justify-content: center;
+  border-right: 1px solid #f0e0d0;
+  transition: all 0.2s;
+  font-family: 'DM Mono', monospace;
+}
+
+.pb { flex: 1; padding: 13px 18px; }
+.pt { font-size: 13.5px; font-weight: 600; color: #1a1a1a; margin-bottom: 4px; }
+.pd { font-size: 11.5px; color: #888; line-height: 1.55; }
+
+.ptgs {
+  display: flex; gap: 5px; margin-top: 8px; flex-wrap: wrap;
+}
+
+.ptg {
+  font-size: 9px; padding: 2px 9px;
+  background: #f0e8e0; color: #b05020;
+  text-transform: uppercase; letter-spacing: 0.06em; font-weight: 500;
+}
+
+.ptg.g { background: #d6ead8; color: var(--green); }
+
+.py { font-size: 11px; color: #bbb; padding: 13px 16px; display: flex; align-items: center; }
+
+.pa {
+  width: 36px; display: flex; align-items: center; justify-content: center;
+  color: var(--orange); font-size: 15px; opacity: 0; transition: opacity 0.2s;
+}
+
+.proj-bottom {
+  display: flex;
+  margin-top: 2px;
+}
+
+.pb-left {
+  flex: 1; background: var(--green-mid);
+  padding: 14px 22px; display: flex; align-items: center; gap: 7px;
+}
+
+.pb-left span { font-size: 11px; color: #7ab88a; }
+
+.pb-right {
+  background: var(--orange); padding: 14px 26px;
+  display: flex; align-items: center; gap: 7px;
+  font-size: 10px; color: #fff; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer;
+  border: none; font-family: 'DM Sans', sans-serif;
+  transition: background 0.2s;
+}
+
+.pb-right:hover { background: var(--orange-hover); }
+
+/* CONTACT */
+#contact {
+  background: var(--green);
+  min-height: 768px;
+}
+
+.contact-inner {
+  display: flex;
+  align-items: stretch;
+  position: relative;
+  z-index: 2;
+}
+
+.contact-left {
+  background: var(--orange);
+  width: 300px;
+  flex-shrink: 0;
+  padding: 40px 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.contact-left h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px; color: #fff; line-height: 1.2; margin-bottom: 10px;
+}
+
+.contact-left > div > p { font-size: 11.5px; color: #f5c9a8; line-height: 1.8; margin-bottom: 24px; }
+
+.cinfo { display: flex; flex-direction: column; gap: 14px; }
+
+.ci {
+  display: flex; align-items: flex-start; gap: 10px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.ci:hover { transform: translateX(4px); }
+.ci i { font-size: 14px; color: rgba(255,255,255,0.9); margin-top: 1px; flex-shrink: 0; }
+.ci span { font-size: 11.5px; color: #f5c9a8; line-height: 1.5; }
+
+.socials { display: flex; gap: 10px; margin-top: 28px; }
+
+.soc {
+  width: 32px; height: 32px;
+  background: rgba(255,255,255,0.12);
+  display: flex; align-items: center; justify-content: center;
+  color: #fff; font-size: 15px; cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.soc:hover { background: rgba(255,255,255,0.28); transform: translateY(-3px); }
+
+.contact-right {
+  flex: 1;
+  background: var(--orange-light);
+  padding: 40px 56px 44px;
+}
+
+.contact-right h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 38px; color: var(--text); margin-bottom: 5px;
+}
+
+.contact-right .sub { font-size: 12px; color: #999; margin-bottom: 26px; }
+
+.frow { display: flex; gap: 14px; margin-bottom: 14px; }
+
+.fg { display: flex; flex-direction: column; flex: 1; gap: 6px; }
+
+.fg label {
+  font-size: 10px; font-weight: 700; color: #888;
+  text-transform: uppercase; letter-spacing: 0.1em;
+}
+
+.fg input, .fg textarea, .fg select {
+  background: #fff;
+  border: 1.5px solid #e8d8c4;
+  padding: 11px 14px;
+  font-size: 12.5px;
+  font-family: 'DM Sans', sans-serif;
+  color: var(--text);
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  width: 100%;
+  border-radius: 0;
+  appearance: none;
+}
+
+.fg input:focus, .fg textarea:focus, .fg select:focus {
+  border-color: var(--orange);
+  box-shadow: 0 0 0 3px rgba(212,100,42,0.12);
+}
+
+.fg input.err, .fg textarea.err, .fg select.err {
+  border-color: #e05050;
+  box-shadow: 0 0 0 3px rgba(220,80,80,0.1);
+}
+
+.fg textarea { resize: vertical; min-height: 100px; line-height: 1.65; }
+
+.fg select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23aaa'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.srow {
+  display: flex; align-items: center;
+  justify-content: space-between; margin-top: 18px;
+}
+
+.snote { font-size: 11px; color: #bbb; font-style: italic; }
+
+.sub-btn {
+  background: var(--green);
+  color: #fff; border: none;
+  padding: 13px 32px;
+  font-size: 12px; font-family: 'DM Sans', sans-serif;
+  font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+  cursor: pointer; display: flex; align-items: center; gap: 9px;
+  transition: all 0.22s;
+}
+
+.sub-btn:hover {
+  background: var(--orange);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(212,100,42,0.35);
+}
+
+.sub-btn:active { transform: translateY(0); }
+
+.ok-msg {
+  display: none;
+  background: #d6ead8;
+  border-left: 3px solid var(--green);
+  padding: 11px 16px;
+  font-size: 12px;
+  color: var(--green);
+  margin-top: 12px;
+  align-items: center;
+  gap: 9px;
+  animation: fadeIn 0.3s ease;
+}
+
+.ok-msg.show { display: flex; }
+
+@keyframes fadeIn { from{opacity:0;transform:translateY(4px)} to{opacity:1;transform:translateY(0)} }
+
+.contact-foot {
+  display: flex;
+  position: relative;
+  z-index: 2;
+}
+
+.cf-l {
+  flex: 1; background: var(--green-mid);
+  padding: 15px 28px; display: flex; align-items: center; gap: 8px;
+}
+
+.cf-l span { font-size: 11px; color: #7ab88a; }
+
+.cf-r {
+  background: var(--orange);
+  padding: 15px 28px; display: flex; align-items: center;
+}
+
+.cf-r span { font-size: 11px; color: #fff; font-weight: 500; letter-spacing: 0.05em; }
+
+footer {
+  background: #0e1f14;
+  padding: 20px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+footer .fp {
+  font-family: 'Playfair Display', serif;
+  font-size: 16px; color: #fff;
+}
+
+footer span { font-size: 11px; color: #2e5238; }
+
+footer .back-top {
+  font-size: 11px; color: #7ab88a; text-decoration: none;
+  display: flex; align-items: center; gap: 6px;
+  transition: color 0.2s;
+}
+
+footer .back-top:hover { color: #fff; }
+
+[data-tip] { position: relative; }
+
+[data-tip]:hover::after {
+  content: attr(data-tip);
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%; transform: translateX(-50%);
+  background: #111;
+  color: #fff;
+  font-size: 10px;
+  padding: 5px 10px;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 999;
+  letter-spacing: 0.04em;
+}
+</style>
+</head>
+<body>
+
+<!-- FIXED NAV -->
+<nav class="topnav">
+  <a href="#hero">Profile</a>
+  <a href="#about">About me</a>
+  <a href="#services">Services</a>
+  <a href="#projects">Projects</a>
+  <a href="#contact" class="active">Get in touch</a>
+</nav>
+
+<!-- ═══════════ HERO ═══════════ -->
+<section id="hero">
+  <svg class="ori ori-tl" viewBox="0 0 80 80" fill="none"><polygon points="40,0 80,60 0,60" fill="#e8567a" opacity="0.55"></polygon><polygon points="40,14 70,60 10,60" fill="#c8334a" opacity="0.45"></polygon><polygon points="20,60 60,60 40,30" fill="#f07090" opacity="0.28"></polygon></svg>
+
+  <div class="hero-inner">
+    <div class="hero-photo">
+      <img src="images/aljun-photo.jpg" alt="Aljun" style="width:100%;height:100%;object-fit:cover;object-position:center top;position:absolute;top:0;left:0;">
+      <div class="photo-placeholder" id="photoPlaceholder" style="display:none;">
+        <i class="ti ti-user-circle"></i>
+        <span>Add your-photo.jpg</span>
+      </div>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-tag">Graphic Designer</div>
+      <h1 class="hero-h1">Hi,<br><em>I'm Aljun !</em></h1>
+      <div class="hero-contacts">
+        <a href="#"><i class="ti ti-map-pin"></i>Philippines</a>
+        <a href="https://www.facebook.com/pumpkeeneye3" target="_blank" rel="noopener"><i class="ti ti-brand-facebook"></i>@aljun.fajardo3</a>
+        <a href="https://www.linkedin.com/in/fajardoaljun03" target="_blank" rel="noopener"><i class="ti ti-brand-linkedin"></i>linkedin.com/in/fajardoaljun03</a>
+        <a href="https://aljunfajardo3-tech.github.io" target="_blank" rel="noopener"><i class="ti ti-brand-github"></i>aljunfajardo3-tech.github.io</a>
+        <a href="tel:+639657380583"><i class="ti ti-phone"></i>+63 965 738 0583</a>
+      </div>
+      <div class="hero-ctas">
+        <a href="#contact" class="btn btn-primary"><i class="ti ti-send"></i>HIRE ME</a>
+        <a href="#projects" class="btn btn-outline"><i class="ti ti-briefcase"></i>VIEW WORK</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-footer">
+    <div class="avail"><span class="dot"></span>Available for freelance work</div>
+    <a href="#about" class="hero-scroll">Scroll to explore<i class="ti ti-arrow-down"></i></a>
+  </div>
+
+  <svg class="ori ori-br" viewBox="0 0 120 140" fill="none"><polygon points="60,0 120,80 0,80" fill="#e8567a" opacity="0.7"></polygon><polygon points="60,20 100,80 20,80" fill="#c8334a" opacity="0.5"></polygon><polygon points="30,80 90,80 60,45" fill="#f07090" opacity="0.35"></polygon><polygon points="60,80 120,140 0,140" fill="#e8567a" opacity="0.4"></polygon><polygon points="60,95 105,140 15,140" fill="#c8334a" opacity="0.3"></polygon></svg>
+</section>
+
+<!-- ═══════════ ABOUT ═══════════ -->
+<section id="about">
+  <div class="sec-nav">
+    <a href="#hero">Profile</a>
+    <a href="#about" class="active">About me</a>
+    <a href="#services">Services</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Get in touch</a>
+  </div>
+
+  <div class="about-inner">
+    <div class="about-left">
+      <div>
+        <h2>Technical
+Skills</h2>
+        <div class="lbl">Software Tools</div>
+        <div class="tool-row">
+          <div class="tool-ico" data-tip="Figma"><i class="ti ti-brand-figma"></i></div>
+          <div class="tool-ico" data-tip="Photoshop"><i class="ti ti-photo"></i></div>
+          <div class="tool-ico" data-tip="Illustrator"><i class="ti ti-vector"></i></div>
+          <div class="tool-ico" data-tip="Canva"><i class="ti ti-layout"></i></div>
+        </div>
+        <div class="lbl">Skills</div>
+        <div class="tags">
+          <span class="tag">WEB DESIGN</span>
+          <span class="tag">HTML/CSS</span>
+          <span class="tag">ILLUSTRATOR</span>
+          <span class="tag">DIGITAL ART</span>
+          <span class="tag">SOCIAL DESIGN</span>
+        </div>
+        <div class="lbl">Language</div>
+        <div class="lang-pills">
+          <span class="lang-pill">English</span>
+          <span class="lang-pill">Filipino</span>
+          <span class="lang-pill">Spanish</span>
+        </div>
+        <div class="lbl">Soft Skills</div>
+        <div class="soft-list">
+          <div class="soft-item"><i class="ti ti-circle-check"></i>Adaptability</div>
+          <div class="soft-item"><i class="ti ti-circle-check"></i>Critical Thinking</div>
+          <div class="soft-item"><i class="ti ti-circle-check"></i>Creativity</div>
+          <div class="soft-item"><i class="ti ti-circle-check"></i>Detail Oriented</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="about-right">
+      <h3>About me</h3>
+      <p>I am a self-taught graphic designer. I possess basic to mid-level knowledge in anything related to design. I am continuously learning digital designing and animation. I am eager to enhance my skills to become an expert in the field of designing.</p>
+      <div class="about-stats">
+        <div class="astat"><div class="n">12+</div><div class="l">Projects Done</div></div>
+        <div class="astat"><div class="n">5+</div><div class="l">Happy Clients</div></div>
+        <div class="astat"><div class="n">2+</div><div class="l">Years Learning</div></div>
+      </div>
+      <svg class="ori ori-br" viewBox="0 0 120 140" fill="none"><polygon points="60,0 120,80 0,80" fill="#e8567a" opacity="0.7"></polygon><polygon points="60,20 100,80 20,80" fill="#c8334a" opacity="0.5"></polygon><polygon points="30,80 90,80 60,45" fill="#f07090" opacity="0.35"></polygon><polygon points="60,80 120,140 0,140" fill="#e8567a" opacity="0.4"></polygon><polygon points="60,95 105,140 15,140" fill="#c8334a" opacity="0.3"></polygon></svg>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ SERVICES ═══════════ -->
+<section id="services">
+  <div class="sec-nav" style="background: rgb(30, 82, 50);">
+    <a href="#hero">Profile</a>
+    <a href="#about">About me</a>
+    <a href="#services" class="active">Services</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Get in touch</a>
+  </div>
+
+  <svg class="ori ori-tl" viewBox="0 0 80 80" fill="none"><polygon points="40,0 80,60 0,60" fill="#e8567a" opacity="0.5"></polygon><polygon points="40,14 70,60 10,60" fill="#c8334a" opacity="0.4"></polygon><polygon points="20,60 60,60 40,30" fill="#f07090" opacity="0.25"></polygon></svg>
+
+  <div class="services-header">
+    <h2>Services Offered</h2>
+    <p>Here's how I can bring your ideas to life</p>
+  </div>
+
+  <div class="svcs-grid">
+    <div class="svc">
+      <div class="sico"><i class="ti ti-brand-figma"></i></div>
+      <div class="sname">UI / UX Design</div>
+      <div class="sdesc">Clean, user-friendly interface design for websites and apps — from wireframes to high-fidelity mockups.</div>
+      <div class="spills"><span class="spill">FIGMA</span><span class="spill">PROTOTYPING</span></div>
+      <div class="snum">01</div>
+    </div>
+    <div class="svc">
+      <div class="sico"><i class="ti ti-palette"></i></div>
+      <div class="sname">Branding &amp; Identity</div>
+      <div class="sdesc">Logo design, color systems, and brand guidelines that give your business a memorable visual voice.</div>
+      <div class="spills"><span class="spill">ILLUSTRATOR</span><span class="spill">LOGO DESIGN</span></div>
+      <div class="snum">02</div>
+    </div>
+    <div class="svc">
+      <div class="sico"><i class="ti ti-device-mobile"></i></div>
+      <div class="sname">Social Media Graphics</div>
+      <div class="sdesc">Eye-catching post templates, stories, and banners designed for Instagram, Facebook, and more.</div>
+      <div class="spills"><span class="spill">PHOTOSHOP</span><span class="spill">CANVA</span></div>
+      <div class="snum">03</div>
+    </div>
+    <div class="svc">
+      <div class="sico"><i class="ti ti-code"></i></div>
+      <div class="sname">Web Design</div>
+      <div class="sdesc">Responsive, polished website layouts ready for handoff or built directly with HTML, CSS &amp; Bootstrap.</div>
+      <div class="spills"><span class="spill">HTML/CSS</span><span class="spill">BOOTSTRAP</span></div>
+      <div class="snum">04</div>
+    </div>
+  </div>
+
+  <div class="svc-addon">
+    <div class="addon-ico"><i class="ti ti-photo-edit"></i></div>
+    <div class="addon-body">
+      <div class="addon-title">Photo Editing &amp; Retouching</div>
+      <div class="addon-desc">Professional cleanup, background removal, color grading &amp; enhancement using Photoshop.</div>
+    </div>
+    <div class="addon-badge">+ Add-on</div>
+  </div>
+
+  <div class="svc-bottom">
+    <div class="sb-left"><span class="dot"></span><span>Open for new projects — let's collaborate!</span></div>
+    <button class="sb-right" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})"><span>HIRE ME</span><i class="ti ti-send"></i></button>
+  </div>
+
+  <svg class="ori ori-br" viewBox="0 0 120 140" fill="none"><polygon points="60,0 120,80 0,80" fill="#e8567a" opacity="0.7"></polygon><polygon points="60,20 100,80 20,80" fill="#c8334a" opacity="0.5"></polygon><polygon points="30,80 90,80 60,45" fill="#f07090" opacity="0.35"></polygon><polygon points="60,80 120,140 0,140" fill="#e8567a" opacity="0.4"></polygon><polygon points="60,95 105,140 15,140" fill="#c8334a" opacity="0.3"></polygon></svg>
+</section>
+
+<!-- ═══════════ PROJECTS ═══════════ -->
+<section id="projects">
+  <div class="sec-nav">
+    <a href="#hero">Profile</a>
+    <a href="#about">About me</a>
+    <a href="#services">Services</a>
+    <a href="#projects" class="active">Projects</a>
+    <a href="#contact">Get in touch</a>
+  </div>
+
+  <div class="proj-inner">
+    <div class="proj-side">
+      <div>
+        <h2>My
+Projects</h2>
+        <p>A selection of work across design &amp; web.</p>
+        <div class="pstats">
+          <div class="pstat"><div class="n">12+</div><div class="l">Projects Done</div></div>
+          <div class="pstat"><div class="n">5+</div><div class="l">Happy Clients</div></div>
+          <div class="pstat"><div class="n">2+</div><div class="l">Years Learning</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="proj-main">
+      <h3>Work</h3>
+      <p class="proj-sub">Showcasing design, development &amp; branding</p>
+      <div class="filter-row">
+        <button class="filt on" onclick="filterProj(this,'all')">ALL</button>
+        <button class="filt" onclick="filterProj(this,'ui')">UI DESIGN</button>
+        <button class="filt" onclick="filterProj(this,'brand')">BRANDING</button>
+        <button class="filt" onclick="filterProj(this,'social')">SOCIAL MEDIA</button>
+        <button class="filt" onclick="filterProj(this,'web')">WEB</button>
+      </div>
+      <div class="plist" id="plist">
+        <div class="prow" data-cat="ui">
+          <div class="pn">01</div>
+          <div class="pb">
+            <div class="pt">Portfolio Website Design</div>
+            <div class="pd">Personal portfolio built in Figma — layout, typography, and color system from scratch.</div>
+            <div class="ptgs"><span class="ptg">FIGMA</span><span class="ptg g">UI DESIGN</span></div>
+          </div>
+          <div class="py">2024</div>
+          <div class="pa"><i class="ti ti-arrow-up-right"></i></div>
+        </div>
+        <div class="prow" data-cat="brand">
+          <div class="pn">02</div>
+          <div class="pb">
+            <div class="pt">Brand Identity — Local Café</div>
+            <div class="pd">Logo, color palette, and menu design for a small coffee shop in Davao.</div>
+            <div class="ptgs"><span class="ptg">ILLUSTRATOR</span><span class="ptg g">BRANDING</span></div>
+          </div>
+          <div class="py">2024</div>
+          <div class="pa"><i class="ti ti-arrow-up-right"></i></div>
+        </div>
+        <div class="prow" data-cat="social">
+          <div class="pn">03</div>
+          <div class="pb">
+            <div class="pt">Social Media Graphics Pack</div>
+            <div class="pd">Template set of 20+ post designs for a clothing brand's Instagram presence.</div>
+            <div class="ptgs"><span class="ptg">PHOTOSHOP</span><span class="ptg g">SOCIAL MEDIA</span></div>
+          </div>
+          <div class="py">2023</div>
+          <div class="pa"><i class="ti ti-arrow-up-right"></i></div>
+        </div>
+        <div class="prow" data-cat="web">
+          <div class="pn">04</div>
+          <div class="pb">
+            <div class="pt">Web UI — Landing Page</div>
+            <div class="pd">Responsive landing page design for a freelance web development client.</div>
+            <div class="ptgs"><span class="ptg">HTML/CSS</span><span class="ptg g">WEB DESIGN</span></div>
+          </div>
+          <div class="py">2023</div>
+          <div class="pa"><i class="ti ti-arrow-up-right"></i></div>
+        </div>
+      </div>
+      <div class="proj-bottom">
+        <div class="pb-left"><span class="dot"></span><span>4 of 12 projects shown</span></div>
+        <button class="pb-right"><span>VIEW ALL</span><i class="ti ti-arrow-right"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <svg class="ori ori-br" viewBox="0 0 120 140" fill="none"><polygon points="60,0 120,80 0,80" fill="#e8567a" opacity="0.7"></polygon><polygon points="60,20 100,80 20,80" fill="#c8334a" opacity="0.5"></polygon><polygon points="30,80 90,80 60,45" fill="#f07090" opacity="0.35"></polygon><polygon points="60,80 120,140 0,140" fill="#e8567a" opacity="0.4"></polygon><polygon points="60,95 105,140 15,140" fill="#c8334a" opacity="0.3"></polygon></svg>
+</section>
+
+<!-- ═══════════ CONTACT ═══════════ -->
+<section id="contact">
+  <div class="sec-nav" style="background: rgb(30, 82, 50);">
+    <a href="#hero">Profile</a>
+    <a href="#about">About me</a>
+    <a href="#services">Services</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact" class="active">Get in touch</a>
+  </div>
+
+  <svg class="ori ori-tl" viewBox="0 0 80 80" fill="none"><polygon points="40,0 80,60 0,60" fill="#e8567a" opacity="0.5"></polygon><polygon points="40,14 70,60 10,60" fill="#c8334a" opacity="0.4"></polygon><polygon points="20,60 60,60 40,30" fill="#f07090" opacity="0.25"></polygon></svg>
+
+  <div class="contact-inner">
+    <div class="contact-left">
+      <div>
+        <h2>Get in
+Touch</h2>
+        <p>Have a project in mind or want to collaborate? I'd love to hear from you.</p>
+        <div class="cinfo">
+          <div class="ci"><i class="ti ti-map-pin"></i><span>Philippines</span></div>
+          <a href="https://www.facebook.com/pumpkeeneye3" target="_blank" rel="noopener" class="ci" style="text-decoration: none;">
+            <i class="ti ti-brand-facebook"></i><span>@aljun.fajardo3</span>
+          </a>
+          <a href="https://aljunfajardo3-tech.github.io" target="_blank" rel="noopener" class="ci" style="text-decoration: none;">
+            <i class="ti ti-brand-github"></i><span>aljunfajardo3-tech.github.io</span>
+          </a>
+          <div class="ci"><i class="ti ti-phone"></i><span>+63 965 738 0583</span></div>
+          <div class="ci"><i class="ti ti-mail"></i><span>aljun@email.com</span></div>
+        </div>
+      </div>
+      <div class="socials">
+        <a href="https://www.facebook.com/pumpkeeneye3" target="_blank" rel="noopener" class="soc" data-tip="Facebook" style="text-decoration: none;">
+          <i class="ti ti-brand-facebook"></i>
+        </a>
+        <div class="soc" data-tip="Instagram"><i class="ti ti-brand-instagram"></i></div>
+        <a href="https://www.linkedin.com/in/fajardoaljun03" target="_blank" rel="noopener" class="soc" data-tip="LinkedIn" style="text-decoration: none;">
+          <i class="ti ti-brand-linkedin"></i>
+        </a>
+        <div class="soc" data-tip="Behance"><i class="ti ti-brand-behance"></i></div>
+        <a href="https://aljunfajardo3-tech.github.io" target="_blank" rel="noopener" class="soc" data-tip="GitHub" style="text-decoration: none;">
+          <i class="ti ti-brand-github"></i>
+        </a>
+      </div>
+    </div>
+
+    <div class="contact-right">
+      <h3>Let's Work Together</h3>
+      <p class="sub">Fill out the form and I'll get back to you within 24 hours.</p>
+      <div class="frow">
+        <div class="fg"><label>FULL NAME</label><input type="text" id="fn" placeholder="Your full name"></div>
+        <div class="fg"><label>EMAIL ADDRESS</label><input type="email" id="em" placeholder="your@email.com"></div>
+      </div>
+      <div class="frow">
+        <div class="fg">
+          <label>SERVICE NEEDED</label>
+          <select id="sv">
+            <option value="" disabled selected>Select a service</option>
+            <option>UI / UX Design</option>
+            <option>Branding &amp; Identity</option>
+            <option>Social Media Graphics</option>
+            <option>Web Design</option>
+            <option>Photo Editing</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="fg">
+          <label>BUDGET RANGE</label>
+          <select id="bg">
+            <option value="" disabled selected>Select budget</option>
+            <option>Under ₱5,000</option>
+            <option>₱5,000 – ₱15,000</option>
+            <option>₱15,000 – ₱30,000</option>
+            <option>₱30,000+</option>
+          </select>
+        </div>
+      </div>
+      <div class="fg"><label>MESSAGE</label><textarea id="mg" placeholder="Tell me about your project — what do you need, timeline, and any details..."></textarea></div>
+      <div class="ok-msg" id="okMsg"><i class="ti ti-circle-check" style="font-size:18px"></i> Your message has been sent! I'll get back to you soon.</div>
+      <div class="srow">
+        <span class="snote">* All fields required · I typically reply within 24 hours</span>
+        <button class="sub-btn" id="subBtn"><span>SEND MESSAGE</span><i class="ti ti-send"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <div class="contact-foot">
+    <div class="cf-l"><span class="dot"></span><span>Available for freelance work · Davao, Philippines</span></div>
+    <div class="cf-r"><span>© 2024 Aljun · All rights reserved</span></div>
+  </div>
+
+  <svg class="ori ori-br" viewBox="0 0 120 140" fill="none"><polygon points="60,0 120,80 0,80" fill="#e8567a" opacity="0.7"></polygon><polygon points="60,20 100,80 20,80" fill="#c8334a" opacity="0.5"></polygon><polygon points="30,80 90,80 60,45" fill="#f07090" opacity="0.35"></polygon><polygon points="60,80 120,140 0,140" fill="#e8567a" opacity="0.4"></polygon><polygon points="60,95 105,140 15,140" fill="#c8334a" opacity="0.3"></polygon></svg>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="fp">Aljun</span>
+  <span>Graphic Designer · Philippines · 2024</span>
+  <a href="#hero" class="back-top"><i class="ti ti-arrow-up"></i>Back to top</a>
+</footer>
+
+<script>
+// Nav scroll highlight
+const secs = ['hero','about','services','projects','contact'];
+window.addEventListener('scroll', () => {
+  let cur = '';
+  secs.forEach(id => {
+    const el = document.getElementById(id);
+    if(el && window.scrollY >= el.offsetTop - 100) cur = id;
+  });
+  document.querySelectorAll('.topnav a, .sec-nav a').forEach(a => {
+    a.classList.remove('active');
+    if(a.getAttribute('href') === '#' + cur) a.classList.add('active');
+  });
+});
+
+// Project filter
+function filterProj(btn, cat) {
+  document.querySelectorAll('.filt').forEach(b => b.classList.remove('on'));
+  btn.classList.add('on');
+  let visIdx = 0;
+  document.querySelectorAll('.prow').forEach(r => {
+    const show = cat === 'all' || r.dataset.cat === cat;
+    r.style.display = show ? 'flex' : 'none';
+    if(show) r.querySelector('.pn').textContent = String(++visIdx).padStart(2,'0');
+  });
+}
+
+// Contact form
+document.getElementById('subBtn').addEventListener('click', () => {
+  const fields = ['fn','em','mg'];
+  const selects = ['sv','bg'];
+  let ok = true;
+  [...fields,...selects].forEach(id => {
+    const el = document.getElementById(id);
+    el.classList.remove('err');
+    if(!el.value.trim()) { el.classList.add('err'); ok = false; }
+  });
+  if(ok) {
+    document.getElementById('okMsg').classList.add('show');
+    const btn = document.getElementById('subBtn');
+    btn.innerHTML = '<i class="ti ti-circle-check"></i> Sent!';
+    btn.style.background = 'var(--green)';
+    btn.disabled = true;
+  }
+});
+
+document.querySelectorAll('input,textarea,select').forEach(el => {
+  el.addEventListener('input', () => el.classList.remove('err'));
+});
+</script>
+
+</body></html>
